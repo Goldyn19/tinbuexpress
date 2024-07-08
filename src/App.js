@@ -7,6 +7,7 @@ import Cart from './pages/Cart';
 import Address from './pages/Address';
 import Shipping from './pages/Shipping';
 import Payment from './pages/Payment';
+import Contact from './pages/Contact';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path='/address' element={<Address/>} />
       <Route path='/shipping' element={<Shipping/>} />
       <Route path='/payment' element={<Payment/>} />
+      <Route path='/contact' element={<Contact/>} />
       </Routes>
       </BrowserRouter>
     </div>

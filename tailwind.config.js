@@ -14,7 +14,7 @@ module.exports = {
         'imperial-red': '#E14B4B',
         'space-cadet': '#17183B',
         'cool-grey': '#A2A3B1',
-        'french-grey': '#D1D1D8',
+        'french-grey': '#D7D7DC',
       },
       fontSize: {
         'headline-large': ['44px', {
@@ -87,6 +87,10 @@ module.exports = {
          }],
          'blog': ['24px', { 
           lineHeight: '36px',
+          fontWeight: '400'
+         }],
+         'contact': ['30px', { 
+          lineHeight: '32px',
           fontWeight: '400'
          }],
          'blog-medium': ['16px', { 
