@@ -13,9 +13,9 @@ const Cart = () => {
     setValue((prevValue) => Math.max(prevValue - 1, 1));
   };
   return (
-    <div className="flex justify-center">
-      <div className="flex">
-        <div className="w-[620px]">
+    <div className="md:flex justify-center mx-5">
+      <div className="md:flex block">
+        <div className="md:w-[620px] w-full">
           <h1>
             <span className="text-headline-medium">Cart</span>
             <span className="text-cool-grey text-title-small ml-3">
@@ -40,7 +40,8 @@ const Cart = () => {
                     Gunnared biege
                   </span>
                 </h1>
-                <div className="flex absolute bottom-0 mb-5 ">
+                <div className="text-title-small block md:hidden">$149.99</div>
+                <div className="flex absolute bottom-0 md:mb-5 ">
                   <div className="flex h-[50px] items-center  border border-cool-grey rounded-md text-title-small w-fit">
                     <button
                       onClick={decrement}
@@ -67,10 +68,10 @@ const Cart = () => {
                 </div>
               </div>
             </div>
-            <div className="text-title-small">$149.99</div>
+            <div className="text-title-small hidden md:block">$149.99</div>
           </div>
           <hr className="my-5" />
-          <div className="flex mt-2 mb-10 justify-between">
+          <div className="flex mt-2 mb-10 md:justify-between">
             <div className="flex relative">
               <img
                 src={pic2}
@@ -88,7 +89,8 @@ const Cart = () => {
                     Lysed bright green
                   </span>
                 </h1>
-                <div className="flex absolute bottom-0 mb-5 ">
+                <div className="text-title-small block md:hidden">$169.99</div>
+                <div className="flex absolute bottom-0 md:mb-5 ">
                   <div className="flex h-[50px] items-center  border border-cool-grey rounded-md text-title-small w-fit">
                     <button
                       onClick={decrement}
@@ -115,7 +117,7 @@ const Cart = () => {
                 </div>
               </div>
             </div>
-            <div className="text-title-small">$169.99</div>
+            <div className="text-title-small hidden md:block">$169.99</div>
           </div>
           <div className="flex  bg-[#3AA39F1A] mt-10 py-4 px-2 border border-verdigris ">
             <PercentIcon />
@@ -125,7 +127,7 @@ const Cart = () => {
             </h1>
           </div>
         </div>
-        <div className="border border-cool-grey py-5 mx-14 w-[380px]">
+        <div className="border border-cool-grey py-5 md:mx-14 md:w-[380px] w-full">
           <h1 className="mx-5 text-headline-small mb-8">Order Summary</h1>
           <div className="mx-5 text-body-large">
             <div className="flex justify-between mb-5">

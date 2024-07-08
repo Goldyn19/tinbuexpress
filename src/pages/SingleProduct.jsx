@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import ArrowLeft from "../assets/icons/ArrowLeft";
 import StarIcon from "../assets/icons/StarIcon";
 import StarIconHalf from "../assets/icons/StarIconHalf";
@@ -6,6 +7,10 @@ import HeartIcon from "../assets/icons/HeartIcon";
 import pic1 from "../assets/images/singleproduct.png";
 
 const SingleProduct = () => {
+    const navigate = useNavigate();
+    const handleViewAllClick = () => {
+        navigate("/cart"); 
+      };
   const [value, setValue] = useState(1);
   const increment = () => {
     setValue((prevValue) => prevValue + 1);
@@ -81,7 +86,7 @@ const SingleProduct = () => {
                   +
                 </button>
               </div>
-              <button className="bg-verdigris text-white text-label-medium   p-5 rounded-md">
+              <button className="bg-verdigris text-white text-label-medium   p-5 rounded-md" onClick={handleViewAllClick}>
                 Add to Cart
               </button>
             </div>
