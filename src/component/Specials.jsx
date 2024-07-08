@@ -2,7 +2,7 @@ import React from 'react'
 import pic1 from '../assets/images/specials.png'
 const Specials = () => {
   return (
-    <div className="h-[500px] w-full  bg-cover relative  bg-left my-10 flex  items-center justify-center md:justify-normal " style={{ backgroundImage: `url(${pic1})` }}>
+    <div className=" w-full  bg-cover relative  bg-left my-10 flex  items-center justify-center md:justify-normal " style={{ backgroundImage: `url(${pic1})` , aspectRatio:3/1 }}>
       <div className='bg-white opacity-90 w-[348px] flex  absolute md:left-28 mx-auto h-[224px] md:w-[314px] lg:h-[338px] lg:w-[545px]'>
         <div className='flex flex-col mx-auto my-auto justify-center  w-[347px] h-[224px] md:w-[314px] lg:h-[217px] lg:w-[312px]'>
             <h1 className='text-verdigris text-specials-large'>BEDSHEET SETS</h1>

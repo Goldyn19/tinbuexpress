@@ -1,7 +1,12 @@
 import React from 'react'
-import {  FaHeart, FaRegEye,FaCartPlus  } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+
 
 const ProductsCard = ({ imgSrc, productName, colours,link, price }) => {
+    const navigate = useNavigate();
+    const handleViewAllClick = () => {
+        navigate("/product"); 
+      };
   return (
     <div className="mb-4 product-wap rounded-0 shadow-md">
     <div className="rounded-0 relative">
@@ -10,24 +15,12 @@ const ProductsCard = ({ imgSrc, productName, colours,link, price }) => {
         src={imgSrc}
         alt={productName}
       />
-      <div className="card-img-overlay rounded-0 product-overlay flex items-center justify-center absolute inset-0 bg-black bg-opacity-20 opacity-0 transition-opacity duration-300 hover:opacity-100">
-        <ul className="list-unstyled">
-          <li>
-            <a className="btn  text-white" href={link}>
-             <FaHeart className="bg-green-500 text-5xl mb-4 p-2 rounded-lg"/>
-            </a>
-          </li>
-          <li>
-            <a className="btn  text-white mt-2" href={link}>
-              <FaRegEye className="bg-green-500 text-5xl mb-4 p-2 rounded-lg"/>
-            </a>
-          </li>
-          <li>
-            <a className="btn  text-white mt-2" href={link}>
-              <FaCartPlus className="bg-green-500 text-5xl p-2 rounded-lg"/>
-            </a>
-          </li>
-        </ul>
+      <div className="card-img-overlay rounded-0 product-overlay flex flex-col items-center justify-center px-5 absolute  inset-0 text-white bg-black bg-opacity-40 opacity-0 transition-opacity duration-300 hover:opacity-100">
+      <h1 className='text-specials-large '>{productName}</h1>
+      <h1 className='specials-medium text-justify '>This is the 1996 Alica Keys Photo frame for Night tour Designed with a golden plate edge and a stand.</h1>
+      <button className="bg-cool-grey text-white text-label-medium   p-5 rounded-md" onClick={handleViewAllClick}>
+                View All
+        </button>
       </div>
     </div>
     <div className="card-body px-3">

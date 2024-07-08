@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ProductsCard from './ProductsCard'
+import FilterIcon from '../assets/icons/FilterIcon'
 import pic1 from '../assets/images/product1.png'
 import pic2 from '../assets/images/product2.png'
 import pic3 from '../assets/images/product3.png'
@@ -14,14 +15,20 @@ import pic11 from '../assets/images/product11.png'
 import pic12 from '../assets/images/product12.png'
 
 const Products = () => {
+    const [open, setOpen] = useState(true);
   return (
     <div className='mx-5 '>
         <div className='flex justify-center text-headline-small'>
             <h1 className='mx-auto'>Our Product</h1>
         </div>
       <div className='md:flex  mx-auto mt-5'>
-        <div className='md:w-1/5 w-full'>
-            <h1 className=' text-headline-small'>New Arrivals</h1>
+        <div className='md:w-1/5 w-full' >
+            <div className='flex  md:hidden cursor-pointer'onClick={() => setOpen(!open)}>
+                <span className='w-fit'><FilterIcon/></span>
+                <span>Filter & Sort</span>
+                </div>
+           <div className={`${open ? 'block': 'hidden'}`}>
+           <h1 className=' text-headline-small'>New Arrivals</h1>
             <h1>New Arrivals</h1>
 
            <div className='ml-8'>
@@ -69,6 +76,7 @@ const Products = () => {
                 <input id="checkbox" type="checkbox" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"/>
                 <label for="checkbox" class="text-body-large text-gray-700">250$ - 350$</label>
             </div>  
+           </div>
            </div>
           
         </div>
