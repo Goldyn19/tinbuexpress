@@ -2,8 +2,7 @@ import React,  { useState } from 'react'
 import MenuIcon from '../assets/icons/MenuIcon';
 import SearchIcon from '../assets/icons/SearchIcon';
 import CartIcon from '../assets/icons/CartIcon';
-import LogoCart from '../assets/icons/LogoCart';
-import LogoPart from '../assets/icons/LogoPart';
+
 const NavBar = () => {
 
     const Links = [
@@ -23,17 +22,6 @@ const NavBar = () => {
         {/* <span><LogoCart/></span>
         <span><LogoPart/></span> */}
       </div>
-
-      {/* <div
-        
-        className="text-3xl absolute right-8 top-5 cursor-pointer lg:hidden"
-      >
-        {open ? (
-          <IoClose className="text-4xl text-[#bcbcbc]" />
-        ) : (
-          <IoMenu className="text-4xl text-[#bcbcbc]" />
-        )}
-      </div> */}
 
       <ul
         className={`lg:flex lg:items-center lg:pb-0  absolute lg:static text-[20px] font-[300] bg-white lg:z-auto z-50 left-0 w-full lg:w-auto lg:pl-0 pl-6 transition-all duration-500 ease-in ${
