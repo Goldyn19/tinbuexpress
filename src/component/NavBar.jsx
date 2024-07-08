@@ -14,7 +14,7 @@ const NavBar = () => {
       ];
       const [open, setOpen] = useState(false);
   return (
-    <div className=" w-full top-0 left-0 bg-white z-50 h-[81px]">
+    <div className=" w-full top-0 left-0 bg-white z-50 h-[81px] border border-b-1 border-cool-grey">
     <div className="max-w-[1800px] flex items-center justify-between mx-auto py-4 md:px-10 px-7">
       <div className="cursor-pointer flex items-center justify-center">
         <span className="text-headline-small  m-auto  text-verdigris">

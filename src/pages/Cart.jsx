@@ -1,10 +1,15 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PercentIcon from "../assets/icons/PercentIcon";
 import CouponIcon from "../assets/icons/CouponIcon";
 import pic1 from "../assets/images/cart1.png";
 import pic2 from "../assets/images/singleproduct.png";
 
 const Cart = () => {
+    const navigate = useNavigate();
+    const handleViewAllClick = () => {
+        navigate("/address"); 
+      };
   const [value, setValue] = useState(1);
   const increment = () => {
     setValue((prevValue) => prevValue + 1);
@@ -173,7 +178,7 @@ const Cart = () => {
             </div>
           </form>
           <div className="px-5">
-          <button className="bg-verdigris text-white text-label-medium w-full my-3  p-5 rounded-md">Proceed To Checkout</button>
+          <button className="bg-verdigris text-white text-label-medium w-full my-3  p-5 rounded-md" onClick={handleViewAllClick}>Proceed To Checkout</button>
           </div>
         </div>
       </div>

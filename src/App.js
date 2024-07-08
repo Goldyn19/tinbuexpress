@@ -4,6 +4,7 @@ import NavBar from './component/NavBar';
 import Home from './pages/Home';
 import SingleProduct from './pages/SingleProduct';
 import Cart from './pages/Cart';
+import Address from './pages/Address';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path='/' element={<Home/>} />
       <Route path='/product' element={<SingleProduct/>} />
       <Route path='/cart' element={<Cart/>} />
+      <Route path='/address' element={<Address/>} />
       </Routes>
       </BrowserRouter>
     </div>
