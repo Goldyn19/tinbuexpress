@@ -2,9 +2,9 @@ import React from 'react'
 
 const CollectionCard = ({imgSrc, name}) => {
   return (
-    <div className='mt-5 w-full mx-5'>
+    <div className='mt-5 w-full   mx-5'>
       <div className='rounded-md '>
-        <img src={imgSrc}alt="" className='rounded-md w-full mx-5' />
+        <img src={imgSrc}alt="" className='rounded-md w-full  mx-5' />
       </div>
       <div className='flex justify-center mt-2 md:text-label-small text-[9px] text-headline-extrasmall'>
         <h1 className='mx-auto'>{name}</h1>

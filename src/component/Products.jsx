@@ -85,10 +85,10 @@ const Products = () => {
            <div className='ml-8'>
            <h1 className=' text-headline-small mt-8 '>Shop by room</h1>
            <DropDowns label="Bedroom" options={bedroomMenu} />
-           <DropDowns label="Living Room" options={bedroomMenu} />
-           <DropDowns label="Child Room" options={bedroomMenu} />
-           <DropDowns label="Bathroom" options={bedroomMenu} />
-           <DropDowns label="Outdoor" options={bedroomMenu} />
+           <DropDowns label="Living Room" options={livingroomMenu} />
+           <DropDowns label="Child Room" options={childroomMenu} />
+           <DropDowns label="Bathroom" options={bathroomMenu} />
+           <DropDowns label="Outdoor" options={outdoorMenu} />
            
             <h1 className=' text-headline-small mt-8 '>Shop by Concept</h1>
             <h1 className=' text-body-large'>Conscious</h1>

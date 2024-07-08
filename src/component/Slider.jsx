@@ -20,17 +20,17 @@ const Slider = ({ slides, deviceType }) => {
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 2
+      items: 3
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 1
+      items: 3
     }
   };
 
   return (
     <>
-      <h1 style={{ textAlign: "center" }}>Example to setup your carousel in react</h1>
+      
       <div className="App">
         <Carousel 
           responsive={responsive}
@@ -61,6 +61,11 @@ const Slider = ({ slides, deviceType }) => {
         .carousel-item-padding {
           margin: 0 15px; /* Adjust the padding to your desired space */
         }
+        @media (max-width: 640px) {
+            .image-height img {
+              height: 250px;
+              
+            }
       `}</style>
     </>
   );
