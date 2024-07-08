@@ -1,20 +1,19 @@
 import './App.css';
-import Collection from './component/Collection';
-import Footer from './component/Footer';
-import Hero from './component/Hero';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from './component/NavBar';
-import Products from './component/Products';
-import Specials from './component/Specials';
+import Home from './pages/Home';
+import SingleProduct from './pages/SingleProduct';
 
 function App() {
   return (
     <div >
+      <BrowserRouter>
       <NavBar/>
-      <Hero/>
-      <Collection/>
-      <Products/>
-      <Specials/>
-      <Footer/>
+      <Routes>
+      <Route path='/' element={<Home/>} />
+      <Route path='/product' element={<SingleProduct/>} />
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }

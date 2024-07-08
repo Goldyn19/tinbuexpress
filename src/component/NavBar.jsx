@@ -2,6 +2,8 @@ import React,  { useState } from 'react'
 import MenuIcon from '../assets/icons/MenuIcon';
 import SearchIcon from '../assets/icons/SearchIcon';
 import CartIcon from '../assets/icons/CartIcon';
+import LogoCart from '../assets/icons/LogoCart';
+import LogoPart from '../assets/icons/LogoPart';
 const NavBar = () => {
 
     const Links = [
@@ -18,6 +20,8 @@ const NavBar = () => {
         <span className="text-headline-small  m-auto  text-verdigris">
           TinbuExpress
         </span>
+        {/* <span><LogoCart/></span>
+        <span><LogoPart/></span> */}
       </div>
 
       {/* <div

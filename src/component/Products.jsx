@@ -2,6 +2,7 @@ import React from 'react'
 import ProductsCard from './ProductsCard'
 import pic1 from '../assets/images/product1.png'
 import pic2 from '../assets/images/product2.png'
+import pic3 from '../assets/images/product3.png'
 import pic4 from '../assets/images/product4.png'
 import pic5 from '../assets/images/product5.png'
 import pic6 from '../assets/images/product6.png'
@@ -74,6 +75,7 @@ const Products = () => {
         <div className='md:w-4/5 md:grid md:grid-cols-3 xl:grid-cols-4 md:gap-4  pt-6'>
             <ProductsCard imgSrc={pic1} productName={'velvet Cover red'} price={'39'} colours={['#3AA39F', '#E14B4B']}/>
             <ProductsCard imgSrc={pic2}  productName={'candle in Glass Holder'} price={'14'} colours={['#3AA39F', '#E14B4B']}/>
+            <ProductsCard imgSrc={pic3}  productName={'Metal Photo Frame'} price={'25'} colours={['#3AA39F', '#E14B4B']}/>
             <ProductsCard imgSrc={pic4}  productName={'Rounded Floor Mat'} price={'34'} colours={['#3AA39F', '#E14B4B']}/>
             <ProductsCard imgSrc={pic5}  productName={'class Light Holder'} price={'22'} colours={['#3AA39F', '#E14B4B']}/>
             <ProductsCard imgSrc={pic6}  productName={'Flannel Duvet Cover set'} price={'44'} colours={['#3AA39F', '#E14B4B']}/>
