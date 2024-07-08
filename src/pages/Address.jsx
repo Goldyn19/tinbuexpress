@@ -10,21 +10,21 @@ const Address = () => {
         navigate("/shipping"); 
     }
   return (
-    <div className="md:flex justify-center mx-5 md:mt-20">
-      <div className="md:flex block">
-        <div className="md:w-[620px] w-full">
+    <div className="lg:flex justify-center mx-5 md:mt-20">
+      <div className="lg:flex block">
+        <div className="lg:w-[620px] w-full">
           <h1 className="flex space-x-8">
-            <span className="text-headline-medium">Address</span>
-            <span className="pt-4 ml-3">
+            <span className="lg:text-headline-medium text-product-card">Address</span>
+            <span className="lg:pt-4 pt-2 ml-3">
               <DirectionRight />
             </span>
-            <span className="text-cool-grey text-headline-medium ml-3">
+            <span className="text-cool-grey lg:text-headline-medium text-product-card ml-3">
               Shipping
             </span>
-            <span className="pt-4 ml-3">
+            <span className="lg:pt-4 pt-2 ml-3">
               <DirectionRight />
             </span>
-            <span className="text-cool-grey text-headline-medium ml-3">
+            <span className="text-cool-grey lg:text-headline-medium text-product-card ml-3">
               Payment
             </span>
           </h1>
@@ -41,7 +41,7 @@ const Address = () => {
               <div className="ml-5">
                 <div className=" flex ">
                   <h1 className="text-title-medium">HNG Nigeria</h1>
-                  <button className="border border-verdigris px-2 py-1 ml-10 rounded-md text-verdigris">
+                  <button className="border border-verdigris px-2 py-1 md:ml-10 rounded-md text-verdigris">
                     Home
                   </button>
                 </div>
@@ -59,7 +59,7 @@ const Address = () => {
               </div>
 
             </div>
-            <div className="flex mt-10 relative">
+            <div className="flex mt-10 mb-8 relative">
               <input
                 id="default-radio-1"
                 type="radio"
@@ -87,9 +87,15 @@ const Address = () => {
                 <button className="px-2 text-label-medium text-imperial-red">Remove</button>
               </div>
             </div>
+            <hr />
+            <h1 className="ml-8 text-verdigris text-label-medium mt-5" >
+                <span className="mr-2">+</span>
+                <span>Add New Address</span>
+            </h1>
           </div>
         </div>
-        <div className="border border-cool-grey py-5 md:mx-14 md:w-[380px] w-full">
+       
+        <div className="border border-cool-grey py-5 lg:mx-14 lg:w-[380px] w-full lg:mt-0 mt-10">
           <h1 className="mx-5 text-headline-small mb-8">Order Summary</h1>
           <div className="mx-5 text-body-large">
             <div className="flex justify-between mb-5">
