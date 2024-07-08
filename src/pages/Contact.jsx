@@ -7,9 +7,11 @@ const Contact = () => {
   return (
     <div>
       <div
-        className="h-[300px] w-full bg-cover relative  bg-center "
+        className="h-[300px] w-full bg-cover relative  bg-center flex justify-center mx-auto items-center"
         style={{ backgroundImage: `url(${pic1})` }}
-      ></div>
+      >
+        <h1 className="text-title-large text-verdigris">Contact</h1>
+      </div>
       <div>
         <div className="md:flex md:mx-5 mb-5 mt-10 justify-center md:space-x-20">
           <div className="mx-5">
