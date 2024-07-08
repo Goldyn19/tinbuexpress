@@ -21,8 +21,8 @@ const NavBar = () => {
         <span className="text-headline-small  m-auto  text-verdigris">
           TinbuExpress
         </span>
-        <span><LogoCart/></span>
-        <span><LogoPart/></span>
+        <span className='md:pt-2 pt-0'><LogoCart/></span>
+        <span className='md:pt-2 pt-0'><LogoPart/></span>
       </div>
 
       <ul
