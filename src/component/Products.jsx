@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import ProductsCard from './ProductsCard'
+import DropDowns from './DropDowns'
 import FilterIcon from '../assets/icons/FilterIcon'
 import pic1 from '../assets/images/product1.png'
 import pic2 from '../assets/images/product2.png'
@@ -15,7 +16,57 @@ import pic11 from '../assets/images/product11.png'
 import pic12 from '../assets/images/product12.png'
 
 const Products = () => {
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
+    const bedroomMenu = [
+        { label: 'Duvet Cover Sets', href: '#' },
+        { label: 'Sheets', href: '#' },
+        { label: 'Bedspreads & Blankets', href: '#' },
+        { label: 'Blankets', href: '#' },
+        { label: 'Curtains', href: '#' },
+        { label: 'Pillowcases', href: '#' },
+        { label: 'Rugs', href: '#' },
+       
+    ]
+    const livingroomMenu = [
+        { label: 'Duvet Cover Sets', href: '#' },
+        { label: 'Sheets', href: '#' },
+        { label: 'Bedspreads & Blankets', href: '#' },
+        { label: 'Blankets', href: '#' },
+        { label: 'Curtains', href: '#' },
+        { label: 'Pillowcases', href: '#' },
+        { label: 'Rugs', href: '#' },
+       
+    ]
+    const childroomMenu = [
+        { label: 'Duvet Cover Sets', href: '#' },
+        { label: 'Sheets', href: '#' },
+        { label: 'Bedspreads & Blankets', href: '#' },
+        { label: 'Blankets', href: '#' },
+        { label: 'Curtains', href: '#' },
+        { label: 'Pillowcases', href: '#' },
+        { label: 'Rugs', href: '#' },
+       
+    ]
+    const bathroomMenu = [
+        { label: 'Duvet Cover Sets', href: '#' },
+        { label: 'Sheets', href: '#' },
+        { label: 'Bedspreads & Blankets', href: '#' },
+        { label: 'Blankets', href: '#' },
+        { label: 'Curtains', href: '#' },
+        { label: 'Pillowcases', href: '#' },
+        { label: 'Rugs', href: '#' },
+       
+    ]
+    const outdoorMenu = [
+        { label: 'Duvet Cover Sets', href: '#' },
+        { label: 'Sheets', href: '#' },
+        { label: 'Bedspreads & Blankets', href: '#' },
+        { label: 'Blankets', href: '#' },
+        { label: 'Curtains', href: '#' },
+        { label: 'Pillowcases', href: '#' },
+        { label: 'Rugs', href: '#' },
+       
+    ]
   return (
     <div className='mx-5 '>
         <div className='flex justify-center text-headline-small'>
@@ -27,25 +78,18 @@ const Products = () => {
                 <span className='w-fit'><FilterIcon/></span>
                 <span>Filter & Sort</span>
                 </div>
-           <div className={`${open ? 'block': 'hidden'}`}>
+           <div className={`${open ? 'block': 'hidden'} md:block`}>
            <h1 className=' text-headline-small'>New Arrivals</h1>
             <h1>New Arrivals</h1>
 
            <div className='ml-8'>
            <h1 className=' text-headline-small mt-8 '>Shop by room</h1>
-            <h1 className='text-body-large text-imperial-red'>Bedroom</h1>
-            <h1 className='ml-5 text-body-large'>Duvet Cover Sets</h1>
-            <h1 className='ml-5 text-body-large'>Sheets</h1>
-            <h1 className='ml-5 text-body-large'>Bedspreads & Blankets</h1>
-            <h1 className='ml-5 text-body-large'>Blankets</h1>
-            <h1 className='ml-5 text-body-large'>Curtains</h1>
-            <h1 className='ml-5 text-body-large'>Pillowcases</h1>
-            <h1 className='ml-5 text-body-large'>Rugs</h1>
-            <h1 className=' text-body-large'>Living Room</h1>
-            <h1 className=' text-body-large'>Child Room</h1>
-            <h1 className=' text-body-large'>Bathroom</h1>
-            <h1 className='text-body-large'>Outdoor</h1>
-
+           <DropDowns label="Bedroom" options={bedroomMenu} />
+           <DropDowns label="Living Room" options={bedroomMenu} />
+           <DropDowns label="Child Room" options={bedroomMenu} />
+           <DropDowns label="Bathroom" options={bedroomMenu} />
+           <DropDowns label="Outdoor" options={bedroomMenu} />
+           
             <h1 className=' text-headline-small mt-8 '>Shop by Concept</h1>
             <h1 className=' text-body-large'>Conscious</h1>
             <h1 className=' text-body-large'>Premium Quality</h1>
@@ -96,8 +140,8 @@ const Products = () => {
 
         </div>
       </div>
-      <div className='flex justify-center mx-auto mt-20 mb-10'>
-      <button className='p-3 border border-verdigris rounded-md text-label-medium text-verdigris'>
+      <div className=' flex justify-center mx-auto mt-2 mb-20'>
+      <button className='p-3 border border-verdigris rounded-md text-label-medium text-verdigris md:ml-[20%]'>
         Show More
       </button>
       </div>

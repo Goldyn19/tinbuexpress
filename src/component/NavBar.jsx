@@ -2,6 +2,8 @@ import React,  { useState } from 'react'
 import MenuIcon from '../assets/icons/MenuIcon';
 import SearchIcon from '../assets/icons/SearchIcon';
 import CartIcon from '../assets/icons/CartIcon';
+import LogoCart from '../assets/icons/LogoCart';
+import LogoPart from '../assets/icons/LogoPart';
 
 const NavBar = () => {
 
@@ -14,13 +16,13 @@ const NavBar = () => {
       const [open, setOpen] = useState(false);
   return (
     <div className=" w-full top-0 left-0 bg-white z-50 h-[81px] border border-b-1 border-cool-grey">
-    <div className="max-w-[1800px] flex items-center justify-between mx-auto py-4 md:px-10 px-7">
+    <div className="max-w-[1800px] flex items-center justify-between md:mx-auto py-4 md:px-10 px-2">
       <div className="cursor-pointer flex items-center justify-center">
         <span className="text-headline-small  m-auto  text-verdigris">
           TinbuExpress
         </span>
-        {/* <span><LogoCart/></span>
-        <span><LogoPart/></span> */}
+        <span className='pt-2'><LogoCart/></span>
+        <span className='pt-2'><LogoPart/></span>
       </div>
 
       <ul
@@ -52,9 +54,11 @@ const NavBar = () => {
           
         </li>
        
-       <li  className="mx-4 ml-8 py-2 border-l-3 border-l-french-grey">
+      <a href="/cart">
+      <li  className="mx-4 ml-8 py-2 border-l-3 border-l-french-grey">
        <CartIcon/>
        </li>
+      </a>
       </ul>
      
     </div>

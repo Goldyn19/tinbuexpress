@@ -6,8 +6,8 @@ import InstagramIcon from "../assets/icons/InstagramIcon";
 
 const Footer = () => {
   return (
-    <div className="bg-[#323334] md:h-[447px]">
-      <div className="md:grid md:grid-cols-3 md:mx-20 sm:mx-5">
+    <div className="bg-[#323334] md:h-[447px] ">
+      <div className="md:grid md:grid-cols-3 md:mx-20 mx-8 pt-3">
         <div className="h-[242px] w-[312px] md:h-[264px] md:w-[221px] lg:h-[242px] lg:w-[312px]  mt-8">
           <div className="cursor-pointer flex items-center justify-center">
             <span className="text-headline-small mr-auto  text-verdigris">

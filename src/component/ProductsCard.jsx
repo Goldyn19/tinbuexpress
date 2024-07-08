@@ -7,6 +7,7 @@ const ProductsCard = ({ imgSrc, productName, colours,link, price }) => {
     const handleViewAllClick = () => {
         navigate("/product"); 
       };
+   
   return (
     <div className="mb-4 product-wap rounded-0 shadow-md">
     <div className="rounded-0 relative">
@@ -18,7 +19,7 @@ const ProductsCard = ({ imgSrc, productName, colours,link, price }) => {
       <div className="card-img-overlay rounded-0 product-overlay flex flex-col items-center justify-center px-5 absolute  inset-0 text-white bg-black bg-opacity-40 opacity-0 transition-opacity duration-300 hover:opacity-100">
       <h1 className='text-specials-large '>{productName}</h1>
       <h1 className='specials-medium text-justify '>This is the 1996 Alica Keys Photo frame for Night tour Designed with a golden plate edge and a stand.</h1>
-      <button className="bg-cool-grey text-white text-label-medium   p-5 rounded-md" onClick={handleViewAllClick}>
+      <button className="border border-cool-grey text-white text-label-medium p-5 rounded-md hover:bg-verdigris" onClick={handleViewAllClick}>
                 View All
         </button>
       </div>
