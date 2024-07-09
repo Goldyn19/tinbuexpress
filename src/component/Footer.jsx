@@ -6,9 +6,9 @@ import InstagramIcon from "../assets/icons/InstagramIcon";
 
 const Footer = () => {
   return (
-    <div className="bg-[#323334] md:h-[447px] ">
-      <div className="md:grid md:grid-cols-3 md:mx-20 mx-8 pt-3">
-        <div className="h-[242px] w-[312px] md:h-[264px] md:w-[221px] lg:h-[242px] lg:w-[312px]  mt-8">
+    <div className="bg-[#323334] pb-10 ">
+      <div className="md:grid md:grid-cols-3 lg:mx-20 mx-8 pt-3">
+        <div className=" w-[312px]  md:w-[221px]  lg:w-[312px]  mt-8">
           <div className="cursor-pointer flex items-center justify-center">
             <span className="text-headline-small mr-auto  text-verdigris">
               TinbuExpress
@@ -46,7 +46,7 @@ const Footer = () => {
                 <h1 className="text-specials-small my-2">Clearance</h1>
             </div>
         </div>
-        <div className="mt-8 flex flex-col relative md:ml-28 w-[312px]">
+        <div className="mt-8 flex flex-col relative lg:ml-28 lg:w-[312px]">
         <h1 className="text-specials-medium text-white ">From The Blog</h1>
         
             <h1 className="mt-5">
@@ -59,10 +59,10 @@ const Footer = () => {
             <hr className="bg-cool-grey my-2 mt-8 "/>
 
             <h1 className="mt-5">
-                <span className="text-cool-grey text-blog ">26</span>
+                <span className="text-cool-grey text-blog ">27</span>
                 <span className="text-cool-grey text-body-medium"> May</span>
             </h1>
-            <h1 className="text-white text-blog-medium">New collection drop by July 16, Get your notification on </h1>
+            <h1 className="text-white text-blog-medium">Emily becomes the lagest purchase of all time. </h1>
             <h1 className="text-cool-grey text-body-medium mt-3">3 comments</h1>
 
 
