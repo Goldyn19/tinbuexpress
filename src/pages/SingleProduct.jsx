@@ -20,7 +20,7 @@ const SingleProduct = () => {
   };
   return (
     <div className="flex justify-center">
-      <div className="container md:ml-24 mt-5 px-5 md:px-0">
+      <div className="container lg:ml-24 mt-5 px-5 lg:px-0">
         <div>
           <ArrowLeft />
         </div>
@@ -33,9 +33,9 @@ const SingleProduct = () => {
         </div>
         <div className="md:flex mt-14 block ">
         <div className="order-1 md:order-2 md:ml-20">
-            <img src={pic1} alt="" className="" />
+            <img src={pic1} alt="" className="w-full" />
           </div>
-          <div className="order-2 md:order-1 ">
+          <div className="order-2 md:order-1 w-auto md:w-1/2 lg:w-auto ">
             <h1 className="text-headline-large">Merryl Lounge Chair</h1>
             <div className="flex justify-between mt-8">
               <h1 className="text-headline-small">$149</h1>

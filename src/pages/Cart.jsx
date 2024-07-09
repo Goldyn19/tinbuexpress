@@ -18,9 +18,9 @@ const Cart = () => {
     setValue((prevValue) => Math.max(prevValue - 1, 1));
   };
   return (
-    <div className="md:flex justify-center mx-5">
-      <div className="md:flex block">
-        <div className="md:w-[620px] w-full">
+    <div className="lg:flex justify-center mx-5">
+      <div className="lg:flex block">
+        <div className="lg:w-[620px] w-full">
           <h1>
             <span className="text-headline-medium">Cart</span>
             <span className="text-cool-grey text-title-small ml-3">
@@ -132,7 +132,7 @@ const Cart = () => {
             </h1>
           </div>
         </div>
-        <div className="border border-cool-grey py-5 md:mx-14 md:w-[380px] w-full">
+        <div className="border border-cool-grey mt-5 lg:mt-0 py-5 lg:mx-14 lg:w-[380px] w-full">
           <h1 className="mx-5 text-headline-small mb-8">Order Summary</h1>
           <div className="mx-5 text-body-large">
             <div className="flex justify-between mb-5">
