@@ -22,7 +22,7 @@ const SingleProduct = () => {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
-        console.log(data)
+        console.log(data);
         setProduct(data);
       } catch (error) {
         console.error('Error fetching product:', error);
@@ -33,7 +33,7 @@ const SingleProduct = () => {
   }, [productId]);
 
   const handleAddToCart = () => {
-    addToCart({ ...product, quantity });
+    addToCart({ ...product }, quantity);
     navigate("/cart");
   };
 
