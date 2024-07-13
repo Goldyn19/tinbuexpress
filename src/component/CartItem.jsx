@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import default_image from '../assets/images/default-product.jpg';
 import { useNavigate } from "react-router-dom";
 
-const CartItem = ({ item, removeFromCart }) => {
+const CartItem = ({ item, removeFromCart, addToCart  }) => {
     const baseUrl = 'https://api.timbu.cloud/images/';
     const imageUrl = item.photos && item.photos[0] && item.photos[0].url ? baseUrl + item.photos[0].url : default_image;
 
@@ -19,6 +19,16 @@ const CartItem = ({ item, removeFromCart }) => {
         if (value > 1) {
             setValue((prevValue) => prevValue - 1);
         }
+    };
+
+    const handleChange = (e) => {
+        const newQuantity = Number(e.target.value);
+        if (newQuantity > value) {
+            addToCart(item, newQuantity - value);
+        } else if (newQuantity < value) {
+            removeFromCart(item, value - newQuantity);
+        }
+        setValue(newQuantity);
     };
 
     const navigate = useNavigate();
@@ -59,7 +69,7 @@ const CartItem = ({ item, removeFromCart }) => {
                             <input
                                 name="quantity"
                                 value={value}
-                                onChange={(e) => setValue(Number(e.target.value))}
+                                onChange={handleChange}
                                 className="w-16 p-2 text-center focus:outline-none"
                             />
                             <button

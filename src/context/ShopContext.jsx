@@ -7,7 +7,7 @@ const ShopContextProvider = (props) => {
     const [cartItems, setCartItems] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:3005/proxy")
+        fetch("https://timbu-get-all-products.reavdev.workers.dev/?organization_id=ed17b6f6a2e548fe9992007acb2e909b&Appid=95VNIS2NW0FIA4L&Apikey=592e71e8195d45f5af3d132ce8293f1f20240712165554452277")
           .then(response => {
             if (!response.ok) {
               throw new Error('Network response was not ok ' + response.statusText);

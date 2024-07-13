@@ -7,7 +7,7 @@ import { ShopContext } from '../context/ShopContext'
 
 const Cart = () => {
   const navigate = useNavigate();
-  const { cartItems, removeFromCart, getTotalPrice  } = useContext(ShopContext);
+  const { cartItems, removeFromCart, getTotalPrice, addToCart  } = useContext(ShopContext);
 
   const handleViewAllClick = () => {
     navigate("/address");
@@ -15,7 +15,7 @@ const Cart = () => {
 
   const renderCartItems = () => {
     return Object.keys(cartItems).map((itemId) => (
-      <CartItem key={itemId} item={cartItems[itemId]} removeFromCart={removeFromCart} />
+      <CartItem key={itemId} item={cartItems[itemId]} removeFromCart={removeFromCart} addToCart={addToCart}/>
     ));
   };
 
