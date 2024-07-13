@@ -1,13 +1,15 @@
-import React from "react";
+import React, {useContext} from "react";
 import { useNavigate } from "react-router-dom";
 import CouponIcon from "../assets/icons/CouponIcon";
 import DirectionRight from "../assets/icons/DirectionRight";
+import { ShopContext } from '../context/ShopContext'
 
 const Shipping = () => {
     const navigate = useNavigate();
     const handleViewAllClick = () => {
         navigate("/payment"); 
     }
+    const {  getTotalPrice  } = useContext(ShopContext);
   return (
     <div className="lg:flex justify-center mx-5 md:mt-20">
       <div className="lg:flex block">
@@ -82,11 +84,11 @@ const Shipping = () => {
           <div className="mx-5 text-body-large">
             <div className="flex justify-between mb-5">
               <h1>Price</h1>
-              <h1>$319.98</h1>
+              <h1>${getTotalPrice().toFixed(2)}</h1>
             </div>
             <div className="flex justify-between mb-5">
               <h1>Discount</h1>
-              <h1>$31.9</h1>
+              <h1>$0.00</h1>
             </div>
             <div className="flex justify-between mb-5">
               <h1>Shipping</h1>
@@ -94,14 +96,14 @@ const Shipping = () => {
             </div>
             <div className="flex justify-between mb-8">
               <h1>Coupon Applied</h1>
-              <h1>$319.98</h1>
+              <h1>$0.00</h1>
             </div>
             <hr />
           </div>
           <div className="mx-5 text-body-large mt-10">
             <div className="flex justify-between mb-5">
               <h1>TOTAL</h1>
-              <h1 className="text-label-medium">$228.08</h1>
+              <h1 className="text-label-medium">${getTotalPrice().toFixed(2)}</h1>
             </div>
             <div className="flex justify-between mb-5">
               <h1>Estimated Delivered by</h1>

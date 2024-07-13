@@ -17,7 +17,6 @@ const SingleProduct = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        console.log(productId)
         const response = await fetch(`https://timbu-get-single-product.reavdev.workers.dev/${productId}?organization_id=ed17b6f6a2e548fe9992007acb2e909b&Appid=95VNIS2NW0FIA4L&Apikey=592e71e8195d45f5af3d132ce8293f1f20240712165554452277`);
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
