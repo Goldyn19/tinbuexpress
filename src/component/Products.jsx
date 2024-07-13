@@ -2,20 +2,11 @@ import React, {useState} from 'react'
 import ProductsCard from './ProductsCard'
 import DropDowns from './DropDowns'
 import FilterIcon from '../assets/icons/FilterIcon'
-import pic1 from '../assets/images/product1.png'
-import pic2 from '../assets/images/product2.png'
-import pic3 from '../assets/images/product3.png'
-import pic4 from '../assets/images/product4.png'
-import pic5 from '../assets/images/product5.png'
-import pic6 from '../assets/images/product6.png'
-import pic7 from '../assets/images/product7.png'
-import pic8 from '../assets/images/product8.png'
-import pic9 from '../assets/images/product9.png'
-import pic10 from '../assets/images/product10.png'
-import pic11 from '../assets/images/product11.png'
-import pic12 from '../assets/images/product12.png'
 
-const Products = () => {
+
+const Products = ({products}) => {
+    
+    console.log(products)
     const [open, setOpen] = useState(false);
     const bedroomMenu = [
         { label: 'Duvet Cover Sets', href: '#' },
@@ -125,7 +116,10 @@ const Products = () => {
           
         </div>
         <div className='md:w-4/5 md:grid md:grid-cols-3 xl:grid-cols-4 md:gap-4  pt-6'>
-            <ProductsCard imgSrc={pic1} productName={'velvet Cover red'} price={'39'} colours={['#3AA39F', '#E14B4B']}/>
+        {products?.map((item, i) => (
+          <ProductsCard key={i} product={item} colours={['#3AA39F', '#E14B4B']}/>
+        )) || <p>Loading...</p>}
+            {/* <ProductsCard imgSrc={pic1} productName={'velvet Cover red'} price={'39'} colours={['#3AA39F', '#E14B4B']} product={products}/>
             <ProductsCard imgSrc={pic2}  productName={'candle in Glass Holder'} price={'14'} colours={['#3AA39F', '#E14B4B']}/>
             <ProductsCard imgSrc={pic3}  productName={'Metal Photo Frame'} price={'25'} colours={['#3AA39F', '#E14B4B']}/>
             <ProductsCard imgSrc={pic4}  productName={'Rounded Floor Mat'} price={'34'} colours={['#3AA39F', '#E14B4B']}/>
@@ -136,7 +130,7 @@ const Products = () => {
             <ProductsCard imgSrc={pic9}  productName={'Checked Duvet Cover Set'} price={'24'} colours={['#3AA39F', '#E14B4B']}/>
             <ProductsCard imgSrc={pic10}  productName={'Washed Linen Pillowcase'} price={'18'} colours={['#3AA39F', '#E14B4B']}/>
             <ProductsCard imgSrc={pic11}  productName={'Ribbon wool-blend Throw'} price={'24'} colours={['#3AA39F', '#E14B4B']}/>
-            <ProductsCard imgSrc={pic12}  productName={'Mini Procelain Dish'} price={'8'} colours={['#3AA39F', '#E14B4B']}/>
+            <ProductsCard imgSrc={pic12}  productName={'Mini Procelain Dish'} price={'8'} colours={['#3AA39F', '#E14B4B']}/> */}
 
         </div>
       </div>
