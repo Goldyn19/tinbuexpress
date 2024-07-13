@@ -5,8 +5,11 @@ import FilterIcon from '../assets/icons/FilterIcon'
 
 
 const Products = ({products}) => {
+
     
-    console.log(products)
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 12; // Number of items per page
+   
     const [open, setOpen] = useState(false);
     const bedroomMenu = [
         { label: 'Duvet Cover Sets', href: '#' },
@@ -58,6 +61,11 @@ const Products = ({products}) => {
         { label: 'Rugs', href: '#' },
        
     ]
+
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = products.slice(indexOfFirstItem, indexOfLastItem);
+    const totalPages = Math.ceil(products.length / itemsPerPage);
   return (
     <div className='mx-5 '>
         <div className='flex justify-center text-headline-small'>
@@ -115,30 +123,23 @@ const Products = ({products}) => {
            </div>
           
         </div>
-        <div className='md:w-4/5 md:grid md:grid-cols-3 xl:grid-cols-4 md:gap-4  pt-6'>
-        {products?.map((item, i) => (
-          <ProductsCard key={i} product={item} colours={['#3AA39F', '#E14B4B']}/>
-        )) || <p>Loading...</p>}
-            {/* <ProductsCard imgSrc={pic1} productName={'velvet Cover red'} price={'39'} colours={['#3AA39F', '#E14B4B']} product={products}/>
-            <ProductsCard imgSrc={pic2}  productName={'candle in Glass Holder'} price={'14'} colours={['#3AA39F', '#E14B4B']}/>
-            <ProductsCard imgSrc={pic3}  productName={'Metal Photo Frame'} price={'25'} colours={['#3AA39F', '#E14B4B']}/>
-            <ProductsCard imgSrc={pic4}  productName={'Rounded Floor Mat'} price={'34'} colours={['#3AA39F', '#E14B4B']}/>
-            <ProductsCard imgSrc={pic5}  productName={'class Light Holder'} price={'22'} colours={['#3AA39F', '#E14B4B']}/>
-            <ProductsCard imgSrc={pic6}  productName={'Flannel Duvet Cover set'} price={'44'} colours={['#3AA39F', '#E14B4B']}/>
-            <ProductsCard imgSrc={pic7}  productName={'Fitted Cotton sheet'} price={'24'} colours={['#3AA39F', '#E14B4B']}/>
-            <ProductsCard imgSrc={pic8}  productName={'Small Candle in a Small Jar'} price={'14'} colours={['#3AA39F', '#E14B4B']}/>
-            <ProductsCard imgSrc={pic9}  productName={'Checked Duvet Cover Set'} price={'24'} colours={['#3AA39F', '#E14B4B']}/>
-            <ProductsCard imgSrc={pic10}  productName={'Washed Linen Pillowcase'} price={'18'} colours={['#3AA39F', '#E14B4B']}/>
-            <ProductsCard imgSrc={pic11}  productName={'Ribbon wool-blend Throw'} price={'24'} colours={['#3AA39F', '#E14B4B']}/>
-            <ProductsCard imgSrc={pic12}  productName={'Mini Procelain Dish'} price={'8'} colours={['#3AA39F', '#E14B4B']}/> */}
-
-        </div>
+        <div className='md:w-4/5 md:grid md:grid-cols-3 xl:grid-cols-4 md:gap-4 pt-6'>
+                    {currentItems?.map((item, i) => (
+                        <ProductsCard key={i} product={item} colours={['#3AA39F', '#E14B4B']} />
+                    )) || <p>Loading...</p>}
+                </div>
       </div>
-      <div className=' flex justify-center mx-auto mt-2 mb-20'>
-      <button className='p-3 border border-verdigris rounded-md text-label-medium text-verdigris md:ml-[20%]'>
-        Show More
-      </button>
-      </div>
+      <div className='flex justify-center mx-auto mt-2 mb-20'>
+                {Array.from({ length: totalPages }, (_, index) => (
+                    <button
+                        key={index}
+                        onClick={() => setCurrentPage(index + 1)}
+                        className={`p-3 border ${index + 1 === currentPage ? 'border-verdigris bg-verdigris text-white' : 'border-verdigris text-verdigris'} rounded-md text-label-medium md:ml-2`}
+                    >
+                        {index + 1}
+                    </button>
+                ))}
+            </div>
     </div>
   )
 }
