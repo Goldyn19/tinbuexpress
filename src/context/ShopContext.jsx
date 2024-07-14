@@ -47,21 +47,24 @@ const ShopContextProvider = (props) => {
     const removeFromCart = (product, quantity = 1) => {
         const existingItem = cartItems.find(item => item.id === product.id);
         if (existingItem) {
-            let updatedCartItems;
-
-            if (existingItem.quantity === 1) {
-                updatedCartItems = cartItems.filter(item => item.id !== product.id);
-            } else {
-                updatedCartItems = cartItems.map(item =>
-                    item.id === product.id ? { ...item, quantity: item.quantity - quantity } : item
-                );
-            }
-
-            setCartItems(updatedCartItems);
+          let updatedCartItems;
+      
+          if (existingItem.quantity <= quantity) {
+            // Remove the item if the quantity becomes zero or less
+            updatedCartItems = cartItems.filter(item => item.id !== product.id);
+          } else {
+            // Update the quantity if it's greater than the quantity to be removed
+            updatedCartItems = cartItems.map(item =>
+              item.id === product.id ? { ...item, quantity: item.quantity - quantity } : item
+            );
+          }
+      
+          setCartItems(updatedCartItems);
         } else {
-            console.error("Item not found in cart");
+          console.error("Item not found in cart");
         }
-    };
+      };
+      
 
     const getTotalPrice = () => {
         const total = cartItems.reduce((total, item) => {

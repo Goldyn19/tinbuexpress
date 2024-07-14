@@ -63,7 +63,7 @@ const SingleProduct = () => {
         </div>
         <div className="md:flex mt-14 block">
           <div className="order-1 md:order-2 md:ml-20">
-            <img src={imageUrl} alt={product.name || 'Product Image'} className="w-full" />
+            <img src={imageUrl} alt={product.name || 'Product Image'} className="w-full lg:w-[500px]" />
           </div>
           <div className="order-2 md:order-1 w-auto md:w-1/2 lg:w-auto">
             <h1 className="text-headline-large">{product.name}</h1>

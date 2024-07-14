@@ -3,11 +3,13 @@ import { useNavigate } from "react-router-dom";
 import PercentIcon from "../assets/icons/PercentIcon";
 import CouponIcon from "../assets/icons/CouponIcon";
 import CartItem from "../component/CartItem";
-import { ShopContext } from '../context/ShopContext'
+import { ShopContext } from "../context/ShopContext";
+import "../assets/css/cart.css";
 
 const Cart = () => {
   const navigate = useNavigate();
-  const { cartItems, removeFromCart, getTotalPrice, addToCart  } = useContext(ShopContext);
+  const { cartItems, removeFromCart, getTotalPrice, addToCart } =
+    useContext(ShopContext);
 
   const handleViewAllClick = () => {
     navigate("/address");
@@ -15,29 +17,35 @@ const Cart = () => {
 
   const renderCartItems = () => {
     return Object.keys(cartItems).map((itemId) => (
-      <CartItem key={itemId} item={cartItems[itemId]} removeFromCart={removeFromCart} addToCart={addToCart}/>
+      <CartItem
+        key={itemId}
+        item={cartItems[itemId]}
+        removeFromCart={removeFromCart}
+        addToCart={addToCart}
+      />
     ));
   };
 
   return (
     <div className="lg:flex justify-center mx-5">
       <div className="lg:flex block lg:mt-10">
-        <div className="lg:w-[620px]  w-full" >
-          <h1>
+        <div className="lg:w-[620px] lg:h-[600px]  overflow-y-auto w-full scrollbar-hide ">
+          <h1 className=" top-0 sticky block z-10 bg-white">
             <span className="text-headline-medium">Cart</span>
             <span className="text-cool-grey text-title-small ml-3">
-              {Object.keys(cartItems).length} {Object.keys(cartItems).length === 1 ? "item" : "items"}
+              {Object.keys(cartItems).length}{" "}
+              {Object.keys(cartItems).length === 1 ? "item" : "items"}
             </span>
           </h1>
 
           {Object.keys(cartItems).length > 0 ? (
-            renderCartItems()
+            <div className="mt-10">{renderCartItems()}</div>
           ) : (
-            <p>Your cart is empty.</p>
+            <p className="text-headline-small">Your cart is empty.</p>
           )}
 
           <hr className="my-5" />
-          <div className="flex bg-[#3AA39F1A] mt-10 py-4 px-2 border border-verdigris">
+          <div className="flex bg-[#3AA39F1A]  mt-10 py-4 px-2 border border-verdigris">
             <PercentIcon />
             <h1 className="text-body-large ml-1">
               10% Instant Discount with Federal Bank Debit Cards on a min spend
@@ -69,7 +77,9 @@ const Cart = () => {
           <div className="mx-5 text-body-large mt-10">
             <div className="flex justify-between mb-5">
               <h1>TOTAL</h1>
-              <h1 className="text-label-medium">${getTotalPrice().toFixed(2)}</h1>
+              <h1 className="text-label-medium">
+                ${getTotalPrice().toFixed(2)}
+              </h1>
             </div>
             <div className="flex justify-between mb-5">
               <h1>Estimated Delivered by</h1>
