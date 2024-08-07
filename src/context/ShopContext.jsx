@@ -7,7 +7,7 @@ const ShopContextProvider = (props) => {
     const [cartItems, setCartItems] = useState([]);
 
     useEffect(() => {
-        fetch("https://tinbu-proxy-server.vercel.app/productshttps://tinbu-proxy-server.vercel.app/products")
+        fetch("https://tinbu-proxy-server.vercel.app/products")
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
