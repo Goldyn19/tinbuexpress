@@ -15,6 +15,7 @@ const ShopContextProvider = (props) => {
                 return response.json();
             })
             .then(data => {
+                console.log(data)
                 setAllProducts(data.items);
             })
             .catch(error => {

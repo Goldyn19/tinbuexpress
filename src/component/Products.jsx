@@ -4,7 +4,7 @@ import DropDowns from './DropDowns'
 import FilterIcon from '../assets/icons/FilterIcon'
 
 
-const Products = ({products}) => {
+const Products = ({products =[]}) => {
 
     
     const [currentPage, setCurrentPage] = useState(1);
@@ -64,7 +64,13 @@ const Products = ({products}) => {
 
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+
+    // let currentItems = [];
     const currentItems = products.slice(indexOfFirstItem, indexOfLastItem);
+
+    // if (products.length > 0){
+    //     const currentItems = products.slice(indexOfFirstItem, indexOfLastItem);
+    // }
     const totalPages = Math.ceil(products.length / itemsPerPage);
   return (
     <div className='mx-5 '>
